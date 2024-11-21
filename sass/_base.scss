@@ -29,3 +29,19 @@ html, body
         font-size: 22px;
     }
 }
+
+body
+{
+    padding: 20px;
+    background-color: $background-color;
+}
+
+section
+{
+    background-color: $container-background-color;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid $container-border-color;
+    border-radius: 10px;
+}
