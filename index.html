@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.min.css"/>
     <title>To-Do List</title>
 </head>
 <body>
@@ -23,20 +27,25 @@
         <section class="listContainer">
             <div class="listTitle">
                 <h1> To Do list</h1>
+                <!-- Clear Items Button -->
                 <button id="clearItems" class="button" title="Clear the list" aria-label="Remove all items from the list" tabindex="0">
                     Clear
                 </button>
             </div>
             <hr/>
+            <!-- Items List -->
             <div id="listItems">
+                <!-- Item #1 -->
                 <div class="item">
                     <input type="checkbox" id="1" tabindex="0">
                     <label for="1">Eat</label>
                 </div>
+                <!-- Item #2 -->
                 <div class="item">
                     <input type="checkbox" id="2" tabindex="0">
                     <label for="1">Sleep</label>
                 </div>
+                <!-- Item #3 -->
                 <div class="item">
                     <input type="checkbox" id="3" tabindex="0">
                     <label for="1">Clean</label>
