@@ -1,4 +1,4 @@
-export default class toDoList
+export default class ToDoList
 {
     constructor()
     {
