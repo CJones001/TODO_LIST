@@ -3,8 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,
-body {
+html,body {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   color: #000;
@@ -12,8 +11,7 @@ body {
   min-height: 100%;
 }
 @media only screen and (min-width: 768px) {
-  html,
-  body {
+  html,body {
     font-size: 22px;
   }
 }
@@ -82,36 +80,36 @@ section {
     font-size: 1.5rem;
   }
 }
-.listConatiner {
+.listContainer {
   min-height: 60vh;
   padding: 0.75rem;
 }
-.listConatiner .listTitle {
+.listContainer .listTitle {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-.listConatiner .listTitle button {
+.listContainer .listTitle button {
   font-size: 1rem;
   background-color: #9f6060;
   padding: 0 0.1rem;
   margin-bottom: 0.5rem;
 }
 @media only screen and (min-width: 768px) {
-  .listConatiner .listTitle button {
+  .listContainer .listTitle button {
     padding: 0 0.5rem;
   }
 }
-.listConatiner .listTitle hr {
+.listContainer .listTitle hr {
   width: 100%;
 }
-.listConatiner .item {
+.listContainer .item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-top: 1rem;
 }
-.listConatiner .item input[type="checkbox"] {
+.listContainer .item input[type="checkbox"] {
   text-align: center;
   width: 2.5rem;
   min-width: 48px;
@@ -120,9 +118,9 @@ section {
   cursor: pointer;
   margin-right: 1.5rem;
 }
-.listConatiner .item input[type="checkbox"]:focus + label {
+.listContainer .item input[type="checkbox"]:focus + label {
   text-decoration: underline;
 }
-.listConatiner .item label {
+.listContainer .item label {
   font-size: 1.1rem;
 } /*# sourceMappingURL=style.min.css.map */
