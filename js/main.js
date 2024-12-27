@@ -15,7 +15,12 @@ document.addEventListener("readystatechange", (event) =>
 const initApp = () => 
 {
     // Add listeners
-
+    const itemEntryForm = document.getElementById("itemEntryForm");
+    itemEntryForm.addEventListener("submit", (event) => 
+    {
+        event.preventDefault();
+        processSubmission();
+    });
     // Procedural
     // load list objects
     refreshThePage();
@@ -93,3 +98,37 @@ const setFocusOnItemEntry = () =>
 {
     document.getElementById("newItem").focus();
 };
+
+const processSubmission = () =>
+{
+    const newEntryText = getNewEntry();
+    if(!newEntryText.length) return;
+    const nextItemId = calcNextItemId();
+    const toDoItem = createNewItem(nextItemId, newEntryText);
+    toDoList.addItemToList(toDoItem);
+    refreshThePage();
+};
+
+const getNewEntry = () =>
+{
+    return document.getElementById("newItem").value.trim();
+};
+
+const calcNextItemId = () => 
+{
+    let nextItemId = 1;
+    const list = toDoList.getList();
+    if(list.length > 0) 
+    {
+        nextItemId = list[list.length - 1].getId() + 1;
+    }
+    return nextItemId;
+};
+
+const createNewItem = (itemId, itemtext) =>
+{
+    const toDo = new toDoItem();
+    toDo.setId(itemId);
+    toDo.setItem(itemText);
+    return toDo;
+}
