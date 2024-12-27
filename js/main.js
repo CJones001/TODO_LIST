@@ -21,10 +21,32 @@ const initApp = () =>
         event.preventDefault();
         processSubmission();
     });
+
+    const clearItems = document.getElementById("clearItems");
+    clearItems.addEventListener("click", (event) => 
+    {
+        const list = toDoList.getList();
+        if(list.length)
+        {
+            const confirmed = confirm("Are you sure you want to clear the entire list?");
+            if(confirmed)
+            {
+                toDoList.clearList();
+                updatePersistentData(toDoList.getList());
+                refreshThePage();
+            }
+        }
+    });
     // Procedural
-    // load list objects
+    loadListObject();
     refreshThePage();
 };
+
+const loadListObject = () => 
+{
+    const storedList = localStorage.getItem("myToDoList");
+    if(typeof storedList !== "string") return;
+}
 
 const refreshThePage = () => 
 {
@@ -82,12 +104,18 @@ const addClickListenerToCheckbox = (checkbox) =>
     checkbox.addEventListener("click", (event) =>
     {
         toDoList.removeItemFromList(checkbox.id);
+        updatePersistentData(toDoList.getList());
         setTimeout(() => 
         {
             refreshThePage();
         }, 1000);
     });
 };
+
+const updatePersistentData = (listArray) =>
+{
+    localStorage.setItem("myToDoList", JSON.stringify(listArray));
+}
 
 const clearItemEntryField = () => 
 {
@@ -125,7 +153,7 @@ const calcNextItemId = () =>
     return nextItemId;
 };
 
-const createNewItem = (itemId, itemtext) =>
+const createNewItem = (itemId, itemText) =>
 {
     const toDo = new toDoItem();
     toDo.setId(itemId);
