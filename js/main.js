@@ -19,7 +19,7 @@ const initApp = () =>
     // Procedural
     // load list objects
     refreshThePage();
-}
+};
 
 const refreshThePage = () => 
 {
@@ -27,10 +27,29 @@ const refreshThePage = () =>
     // renderList();
     // clearItemEntryField();
     // setFocusOnItemEntry();
-}
+};
 
 const clearListDisplay = () =>
 {
     const parentElement = document.getElementById("listItems");
     deleteContents(parentElement);
-}
+};
+
+const deleteContents = (parentElement) => 
+{
+    let child = parentElement.lastElementChild;
+    while(child)
+    {
+        parentElement.removeChild(child);
+        child = parentElement.lastElementChild;
+    }
+};
+
+const renderList = () => 
+{
+    const list = toDoList.getList();
+    list.forEach((item) => 
+    {
+        buildListItem(item);
+    });
+};
