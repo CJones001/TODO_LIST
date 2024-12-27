@@ -24,7 +24,7 @@ const initApp = () =>
 const refreshThePage = () => 
 {
     clearListDisplay();
-    // renderList();
+    renderList();
     // clearItemEntryField();
     // setFocusOnItemEntry();
 };
@@ -53,3 +53,13 @@ const renderList = () =>
         buildListItem(item);
     });
 };
+
+const buildListItem = (item) =>
+{
+    const div = document.createElement("div");
+    div.className = "item";
+    const check = document.createElement("input");
+    check.type = "checkbox";
+    check.id = item.getId();
+    check.tabIndex = 0;
+}
