@@ -46,7 +46,13 @@ const loadListObject = () =>
 {
     const storedList = localStorage.getItem("myToDoList");
     if(typeof storedList !== "string") return;
-}
+    const parsedList = JSON.parse(storedList);
+    parsedList.forEach((itemObj) =>
+    {
+        const newToDoItem = createNewItem(itemObj._id, itemObj._item);
+        toDoList.addItemToList(newToDoItem);
+    });
+};
 
 const refreshThePage = () => 
 {
